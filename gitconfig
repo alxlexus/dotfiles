@@ -1,0 +1,40 @@
+[user]
+	name = Enric Lluelles
+	email = enric@lluell.es
+[alias]
+	co = checkout
+  msg = commit --allow-empty -m
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[core]
+	excludesfile = /Users/enric/.gitignore
+  editor = vim
+[apply]
+	whitespace = nowarn
+[pull]
+	default = tracking
+[push]
+	default = tracking
+[github]
+  user = enriclluelles
+  password = !security 2>&1 >/dev/null find-generic-password -gs github.password | ruby -e 'print $1 if STDIN.gets =~ /^password: \\\"(.*)\\\"$/'
+[branch]
+	autosetuprebase = always
+[merge]
+  tool = custom
+[mergetool "custom"]
+  cmd=$EDITOR -d -g $LOCAL $MERGED $REMOTE
+  keepbackup=false
+  keeptemporaries=false
+  trustexitcode=false
+[pretty "shortd"]
+  format = "%Cred%h%Creset - %C(green) %an %C(reset) - %C(yellow)%d%Creset %s %Cgreen(%cr) %Creset"
+[tig]
+   line-graphics = "utf-8"
+   show-date = relative
+   author-width = 20
+   show-rev-graph = yes
+[help]
+	autocorrect = 1

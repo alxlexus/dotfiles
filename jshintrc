@@ -1,0 +1,11 @@
+{
+  "asi"           : false,  // Tolerate Automatic Semicolon Insertion (no semicolons).
+  "laxbreak"      : true,   // Tolerate unsafe line breaks e.g. `return [\n] x` without semicolons.
+  "laxcomma"      : true,
+  "multistr"      : true,
+  "es5"           : true,   //ECMAScript 5, fewer reserved words
+  "expr"          : true,   //Allow "expression statements" e.g. cb && cb()
+  "browser"       : true,
+  "node"          : true,
+  "jquery"        : true
+}

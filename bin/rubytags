@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+paths = $LOAD_PATH
+require('rubygems')
+begin
+  require('bundler')
+  runtime = ::Bundler::Runtime.new Dir.pwd, ::Bundler.definition
+  paths.concat(runtime.specs.map(&:full_gem_path))
+rescue LoadError
+  paths << Gem.dir
+rescue Bundler::GemfileNotFound
+  paths << Gem.dir
+end
+paths = paths.select{|p| File.exists?(p)}
+
+`/usr/local/bin/ctags -R --languages=ruby --exclude=log,.git,spec,test,features . #{paths.join(" ")}`

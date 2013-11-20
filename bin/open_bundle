@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+pushd `bundle show $1 --paths`
+$EDITOR .
+popd

@@ -1,0 +1,41 @@
+export EDITOR="vim"
+export CLICOLOR=1
+export LSCOLORS=bxfxcxdxbxegebabagacad
+
+#jruby and rubinius options
+export JRUBY_OPTS=--1.9
+export RBXOPT=-X19
+
+#where do we store the pg socket file?
+export PGHOST=/tmp
+
+#where's the go code?
+export GOPATH=$HOME/.gocode
+
+
+#set window title with the current dir, works on iTerm2
+export PROMPT_COMMAND='echo -ne "\\033]0;${PWD/#$HOME/~}\\007"'
+
+#history settings
+export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
+export HISTSIZE=100000                   # big big history
+export HISTFILESIZE=100000               # big big history
+shopt -s histappend                      # append to history, don't overwrite it
+
+# Append to the history after each command finishes
+export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+
+# Uncomment this if you want the history reloaded right away
+# Keep in mind that pressing the up arrow can not give you the last
+# command used. Most of the time, it's more pracical to only reload when a new
+# session is opened
+
+#export PROMPT_COMMAND="history -c; history -r; $PROMPT_COMMAND"
+
+
+source /usr/local/share/chruby/chruby.sh
+chruby 2.0.0-p
+
+
+#vi mode by default
+set -o vi
