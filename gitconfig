@@ -3,6 +3,7 @@
 	email = enric@lluell.es
 [alias]
 	co = checkout
+  subup = submodule update --init
   msg = commit --allow-empty -m
 [color]
 	diff = auto
