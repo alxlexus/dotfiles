@@ -34,7 +34,7 @@ export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
 
 source /usr/local/share/chruby/chruby.sh
-chruby 2.0.0-p
+chruby 2.1.0
 
 
 #vi mode by default
