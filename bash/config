@@ -11,6 +11,7 @@ export PGHOST=/tmp
 
 #where's the go code?
 export GOPATH=$HOME/.gocode
+export DOCKER_HOST=tcp://localhost:4243
 
 
 #set window title with the current dir, works on iTerm2
