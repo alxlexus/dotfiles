@@ -10,7 +10,7 @@ export RBXOPT=-X19
 export PGHOST=/tmp
 
 #where's the go code?
-export GOPATH=$HOME/code/go
+export GOPATH=$HOME/.gocode
 export DOCKER_HOST=tcp://localhost:4243
 
 
