@@ -81,3 +81,5 @@ alias superkill='pkill -s9 -f'
 alias sudo='sudo env PATH=$PATH'
 
 alias vimnone='vim -u NONE'
+
+alias docker_killall='docker kill $(docker ps -a -q)'
