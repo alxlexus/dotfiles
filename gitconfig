@@ -26,7 +26,7 @@
 [merge]
   tool = custom
 [mergetool "custom"]
-  cmd=$EDITOR -d -g $LOCAL $MERGED $REMOTE
+  cmd=$EDITOR -d $LOCAL $MERGED $REMOTE
   keepbackup=false
   keeptemporaries=false
   trustexitcode=false
