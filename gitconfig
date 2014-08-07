@@ -4,6 +4,7 @@
 [alias]
 	co = checkout
   subup = submodule update --init
+  pushnew = "!git push -u origin $(git rev-parse --abbrev-ref HEAD)"
   msg = commit --allow-empty -m
 [color]
 	diff = auto
