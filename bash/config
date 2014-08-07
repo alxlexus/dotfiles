@@ -41,7 +41,7 @@ export VIMRUNTIME=$last
 
 
 source /usr/local/share/chruby/chruby.sh
-chruby 2.1.0
+chruby 2.1.2
 
 
 #vi mode by default
