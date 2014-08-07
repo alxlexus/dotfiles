@@ -2,11 +2,11 @@
 
 main = ARGV[0] || 'master'
 
+`git remote prune origin`
 `git branch -r --merged #{main}`.split("\n").each do |l|
   if l.match(%r{origin/(\S+)})
     `git push origin :#{$1}` unless $1 == main || $1 == 'master'
   end
-  `git remote prune origin`
 end
 
 `git branch --merged #{main}`.split("\n").each do |l|
