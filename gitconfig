@@ -34,8 +34,5 @@
   format = "%Cred%h%Creset - %C(green) %an %C(reset) - %C(yellow)%d%Creset %s %Cgreen(%cr) %Creset"
 [tig]
    line-graphics = "utf-8"
-   show-date = relative
-   author-width = 20
-   show-rev-graph = yes
 [help]
 	autocorrect = 1
