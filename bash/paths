@@ -5,7 +5,6 @@ export PATH="${GOPATH//://bin:}/bin:$PATH"
 #One addition per line, easier to remove
 export PATH="/opt/local/bin:$PATH"
 export PATH="./node_modules/.bin:$PATH"
-export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH" 
 export PATH="$HOME/Library/Python/2.7/bin:$PATH"
 export PATH="/usr/local/heroku/bin:$PATH"
 export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
