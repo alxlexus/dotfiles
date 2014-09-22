@@ -40,9 +40,11 @@ export VIMRUNTIME=$last
 #export PROMPT_COMMAND="history -c; history -r; $PROMPT_COMMAND"
 
 
-source /usr/local/share/chruby/chruby.sh
-chruby 2.1.2
-
+CHRUBY_PATH=/usr/local/share/chruby/chruby.sh
+if [ -f $CHRUBY_PATH ]; then
+  source $CHRUBY_PATH
+  chruby 2.1.2
+fi
 
 #vi mode by default
 set -o vi
