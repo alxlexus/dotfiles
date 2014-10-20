@@ -34,6 +34,8 @@
 [pretty "shortd"]
   format = "%Cred%h%Creset - %C(green) %an %C(reset) - %C(yellow)%d%Creset %s %Cgreen(%cr) %Creset"
 [tig]
-   line-graphics = "utf-8"
+  line-graphics = "utf-8"
+  main-view = id:yes date:relative author:yes commit-title:yes,graph=yes,refs=yes,overflow=yes
+  vertical-split = no
 [help]
 	autocorrect = 1
