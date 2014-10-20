@@ -1,24 +1,25 @@
 (require 'package)
 (add-to-list 'package-archives 
-	     '("marmalade" .
-	       "http://marmalade-repo.org/packages/"
-         )
-       '("melpa" .
-         "http://melpa.milkbox.net/packages/"
-         ))
+             '("marmalade" .
+               "http://marmalade-repo.org/packages/"
+               )
+             '("melpa" .
+               "http://melpa.milkbox.net/packages/"
+               ))
 
 (package-initialize)
 
+(when (not package-archive-contents)
+  (package-refresh-contents))
 
 (defvar my-packages '(clojure-mode
                        evil
-                       clojure-test-mode
                        auto-complete
-                       nrepl
-                       ac-nrepl
+                       cider
                        rainbow-delimiters
-		       projectile
-		       flx-ido
+                       projectile
+                       flx-ido
+                       color-theme-solarized
                        ))
 
 (dolist (p my-packages)
@@ -28,27 +29,29 @@
 (require 'evil)
 (evil-mode 1)
 
-(require 'flx-ido)
-(ido-mode 1)
-(ido-everywhere 1)
-(flx-ido-mode 1)
-;; disabe ido faces to see flx highlights.
-(setq ido-enable-flex-matching t)
-(setq ido-use-faces nil)
-
 (projectile-global-mode)
 
 (require 'auto-complete)
 (global-auto-complete-mode t)
-(require 'ac-nrepl)
+
 (require 'rainbow-delimiters)
-(add-hook 'nrepl-mode-hook 'ac-nrepl-setup)
-(add-hook 'nrepl-interaction-mode-hook 'ac-nrepl-setup)
-(eval-after-load "auto-complete"
-  '(add-to-list 'ac-modes 'nrepl-mode))
 (global-rainbow-delimiters-mode)
- (require 'package)
-  (push '("marmalade" . "http://marmalade-repo.org/packages/")
-        package-archives )
-  (push '("melpa" . "http://melpa.milkbox.net/packages/")
-        package-archives)
+
+
+;; Disable autosave
+(setq auto-save-default nil) 
+
+;; Disable backups
+(setq backup-inhibited t)
+
+;; Follow symlinks by default instead of asking
+(setq vc-follow-symlinks t)
+
+;; Use solarized theme
+(load-theme 'solarized-light t)
+
+;; Disable menu bar by default
+(menu-bar-mode -1)
+
+;; Line numbers on the left side of the screen
+(global-linum-mode t)
