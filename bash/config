@@ -10,7 +10,7 @@ export RBXOPT=-X19
 export PGHOST=/tmp
 
 #where's the go code?
-export GOPATH=$HOME/.gocode
+export GOPATH=$HOME/code/gocode
 export DOCKER_HOST=tcp://$(boot2docker ip 2> /dev/null):2375
 
 
