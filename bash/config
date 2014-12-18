@@ -17,6 +17,10 @@ export DOCKER_HOST=tcp://$(boot2docker ip 2> /dev/null):2375
 #set window title with the current dir, works on iTerm2
 export PROMPT_COMMAND='echo -ne "\\033]0;${PWD/#$HOME/~}\\007"'
 
+#locales
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 #history settings
 export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
 export HISTSIZE=100000                   # big big history
