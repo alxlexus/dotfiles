@@ -47,7 +47,7 @@ export VIMRUNTIME=$last
 CHRUBY_PATH=/usr/local/share/chruby/chruby.sh
 if [ -f $CHRUBY_PATH ]; then
   source $CHRUBY_PATH
-  chruby 2.1.2
+  chruby 2.2.0
 fi
 
 #vi mode by default
