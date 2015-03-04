@@ -11,7 +11,7 @@
 	status = auto
 	branch = auto
 [core]
-	excludesfile = /Users/enric/.gitignore
+	excludesfile = $HOME/.gitignore_global
   editor = vim
 [apply]
 	whitespace = nowarn
