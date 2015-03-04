@@ -42,6 +42,22 @@ export VIMRUNTIME=$last
 # session is opened
 
 #export PROMPT_COMMAND="history -c; history -r; $PROMPT_COMMAND"
+#
+
+
+# Use the latest Oracle JDK if present and JAVA_HOME is not set
+JDK_DIR="/Library/Java/JavaVirtualMachines"
+if [ -z "$JAVA_HOME" ] && [ -d $jdkr_dir ]; then
+  CURRENT_JDK="$jdk_dir/CurrentJDK"
+  if [ -d $CURRENT_JDK ]; then
+    export JAVA_HOME=$CURRENT_JDK/Contents/Home
+  else
+    CURRENT_JDK=$JDK_DIR/$(ls $JDK_DIR | sort | tail -n 1)
+    if [ -d $CURRENT_JDK ]; then
+      export JAVA_HOME=$CURRENT_JDK/Contents/Home
+    fi
+  fi
+fi
 
 
 CHRUBY_PATH=/usr/local/share/chruby/chruby.sh
