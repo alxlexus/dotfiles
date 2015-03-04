@@ -50,6 +50,8 @@
 	<false/>
 	<key>HideActivityIndicator</key>
 	<false/>
+	<key>HideMenuBarInFullscreen</key>
+	<true/>
 	<key>HideScrollbar</key>
 	<false/>
 	<key>HideTab</key>
@@ -136,9 +138,9 @@
 		<string>@~v</string>
 	</dict>
 	<key>NSWindow Frame Preferences</key>
-	<string>269 104 924 485 0 0 1440 900 </string>
+	<string>186 73 924 485 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>491 237 570 451 0 0 1440 900 </string>
+	<string>0 0 1280 800 0 0 1280 777 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -859,6 +861,8 @@
 			<string>/Users/enric</string>
 		</dict>
 	</array>
+	<key>NoSyncNeverRemindPrefsChangesCopy</key>
+	<true/>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
 	<key>OpenArrangementAtStartup</key>
@@ -905,7 +909,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string></string>
+	<string>/Users/enric.lluelles/.dotfiles/preferences</string>
 	<key>PromptOnQuit</key>
 	<false/>
 	<key>QuitWhenAllWindowsClosed</key>
@@ -921,7 +925,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-03-02T16:29:09Z</date>
+	<date>2015-03-03T17:26:35Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
