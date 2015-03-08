@@ -11,8 +11,9 @@
 	status = auto
 	branch = auto
 [core]
-	excludesfile = $HOME/.gitignore_global
+  excludesfile = $HOME/.gitignore_global
   editor = vim
+  autocrlf = input
 [apply]
 	whitespace = nowarn
 [pull]
