@@ -1,0 +1,18 @@
+#!/bin/bash
+filename="./gradlew"
+
+function upsearch () {
+    test / == "$PWD" && echo "$1 not found" && return
+    test -e "$1" && $1 $2 && return
+    cd .. && upsearch "$1" "$2"
+}
+
+function run() {
+  pushd $PWD > /dev/null
+  upsearch $filename $1
+  popd > /dev/null
+}
+
+if [ -z ${1+x} ]; then arg="build"; else arg=$1; fi
+
+run $arg
