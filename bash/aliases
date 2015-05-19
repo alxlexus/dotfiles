@@ -82,4 +82,4 @@ alias sudo='sudo env PATH=$PATH'
 
 alias vimnone='vim -u NONE'
 
-alias docker_killall='docker kill $(docker ps -a -q)'
+alias docker_killall='docker rm -f $(docker ps -a -q)'
