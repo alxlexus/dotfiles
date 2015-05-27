@@ -1,0 +1,17 @@
+#!/bin/bash
+
+#replace a string in all the file that are descendants of the current dir
+
+SOURCE_PATTERN=$1
+TARGET_PATTERN=$2
+
+IFS=$'\n'
+TEMPFNAME="__t_f_name"
+
+pwd=`pwd`
+
+for FILE in `find $pwd -type f`; do
+  mv $FILE $TEMPFNAME
+  gsed -i "s/$SOURCE_PATTERN/$TARGET_PATTERN/g" $TEMPFNAME
+  mv $TEMPFNAME $FILE
+done
