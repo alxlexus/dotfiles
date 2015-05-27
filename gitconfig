@@ -6,6 +6,7 @@
   subup = submodule update --init
   pushnew = "!git push -u origin $(git rev-parse --abbrev-ref HEAD)"
   msg = commit --allow-empty -m
+  br = for-each-ref --sort=committerdate refs/heads/ --format='%(committerdate:short) %(refname:short)' #https://twitter.com/pheeelicks/status/603548193494855680
 [color]
 	diff = auto
 	status = auto
