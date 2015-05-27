@@ -36,6 +36,12 @@ for file in "/usr/local/Cellar/vim/*/share/vim/vim74"; do
   last=$file
 done
 
+if [ ! -d $last ]; then
+  for file in "/usr/local/Cellar/macvim/*/MacVim.app/Contents/Resources/vim/runtime"; do
+    last=$file
+  done
+fi
+
 export VIMRUNTIME=$last
 
 # Uncomment this if you want the history reloaded right away
