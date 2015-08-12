@@ -20,14 +20,15 @@ function awsprofile {
 function __awskeys_list {
     local credentials_list="$(egrep '^\[ *[a-zA-Z0-9_-]+ *\]$' ~/.aws/credentials)"
     local config_list="$(egrep '^\[ *profile *[a-zA-Z0-9_-]+ *\]$' ~/.aws/config)"
+    config_list=${config_list//profile/}
     if [[ -n $"{credentials_list}" ]]; then
         for profile in ${credentials_list}; do
             echo "$(echo ${profile} | tr -d "[]")"
         done
     fi
     if [[ -n $"{config_list}" ]]; then
-        for profile in ${config_list}; do
-            echo "$(echo ${profile} | tr -d "[]")"
+        for prof in ${config_list}; do
+            echo "$(echo ${prof/profile /m} | tr -d "[]")"
         done
     fi
 }
@@ -38,4 +39,3 @@ function __awskeys_comp {
     COMPREPLY=( $(compgen -W "$(__awskeys_list)" -- ${cur}) )
     return 0
 }
-
