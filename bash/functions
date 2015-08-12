@@ -39,4 +39,3 @@ function __awskeys_comp {
     return 0
 }
 
-complete -F __awskeys_comp awsprofile
