@@ -1,0 +1,42 @@
+function awsprofile {
+  local increds=$(grep -n "\[ *$1 *\]" ~/.aws/credentials)
+  local inconfig=$(grep -n "\[ *profile *$1 *\]" ~/.aws/config)
+  if [[ -n "${increds}" ]] || [[ -n "${inconfig}" ]]; then
+    unset AWS_ACCESS_KEY_ID
+    unset AWS_SECRET_ACCESS_KEY
+    unset AWS_DEFAULT_REGION
+    unset AWS_SSH_KEY
+    unset AMAZON_ACCESS_KEY_ID
+    unset AMAZON_SECRET_ACCESS_KEY
+    unset AWS_ACCESS_KEY
+    unset AWS_SECRET_KEY
+    export AWS_PROFILE=$1
+    export AWS_DEFAULT_PROFILE=$1
+  else
+    echo "Profile $1 not found in AWS files"
+  fi
+}
+
+function __awskeys_list {
+    local credentials_list="$(egrep '^\[ *[a-zA-Z0-9_-]+ *\]$' ~/.aws/credentials)"
+    local config_list="$(egrep '^\[ *profile *[a-zA-Z0-9_-]+ *\]$' ~/.aws/config)"
+    if [[ -n $"{credentials_list}" ]]; then
+        for profile in ${credentials_list}; do
+            echo "$(echo ${profile} | tr -d "[]")"
+        done
+    fi
+    if [[ -n $"{config_list}" ]]; then
+        for profile in ${config_list}; do
+            echo "$(echo ${profile} | tr -d "[]")"
+        done
+    fi
+}
+
+function __awskeys_comp {
+    COMPREPLY=()
+    local cur="${COMP_WORDS[COMP_CWORD]}"
+    COMPREPLY=( $(compgen -W "$(__awskeys_list)" -- ${cur}) )
+    return 0
+}
+
+complete -F __awskeys_comp awsprofile
