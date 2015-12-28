@@ -39,3 +39,11 @@ function __awskeys_comp {
     COMPREPLY=( $(compgen -W "$(__awskeys_list)" -- ${cur}) )
     return 0
 }
+
+function pubfrompem {
+  openssl rsa -in $1 -pubout
+}
+
+function sshpubfrompem {
+  ssh-keygen -y -f $1
+}
