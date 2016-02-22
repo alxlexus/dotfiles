@@ -2,6 +2,7 @@ export EDITOR="vim"
 export CLICOLOR=1
 export LSCOLORS=bxfxcxdxbxegebabagacad
 
+
 # don't export extended attributes when creating tars
 export COPYFILE_DISABLE=true
 
@@ -78,3 +79,6 @@ fi
 
 #vi mode by default
 set -o vi
+
+#disable xon/xoff to use ctrl-s in reverse-i-search
+stty -ixon
