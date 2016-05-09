@@ -10,8 +10,6 @@ TEMPFNAME="__t_f_name"
 
 pwd=`pwd`
 
-for FILE in `find $pwd -type f`; do
-  mv $FILE $TEMPFNAME
-  gsed -i "s/$SOURCE_PATTERN/$TARGET_PATTERN/g" $TEMPFNAME
-  mv $TEMPFNAME $FILE
+for FILE in `gfind $pwd -not -path ".git*" -type f`; do
+  gsed -i'' "s/$SOURCE_PATTERN/$TARGET_PATTERN/g" $FILE
 done
