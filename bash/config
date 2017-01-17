@@ -82,3 +82,11 @@ set -o vi
 
 #disable xon/xoff to use ctrl-s in reverse-i-search
 stty -ixon
+
+GPG_TTY=$(tty)
+export GPG_TTY
+if [ -f "${HOME}/.gpg-agent-info" ]; then
+    . "${HOME}/.gpg-agent-info"
+    export GPG_AGENT_INFO
+    export SSH_AUTH_SOCK
+fi
